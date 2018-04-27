@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+ <form action="#" th:action="@{/addIngreso}" th:object="${ingreso}" method="post">
+ 	<table border=1>
+ 	<tr>
+ 		<td>Nombre de la Empresa: </td>
+ 		<td><input type="text" th:field="*{nomEmpresa}"/></td>
+ 		<td th:if="${#fields.hasErrors('nomEmpresa')}" th:errors="*{nomEmpresa}">Debe Ingresar el nombre de su Empresa</td>
+ 	</tr>
+ 	<tr>
+ 		<td>Ingreso Bruto: </td>
+ 		<td><input type="text" th:field="*{ingresoBruto}"/></td>
+ 		<td th:if="${#fields.hasErrors('ingresoBruto')}" th:errors="*{ingresoBruto}">Valor que ingreso no es un numero o es negativo.</td>
+ 	</tr>
+ 	</table>
+ 	<input type="submit" value="Agregar">
+</form>
+</body>
+</html>
