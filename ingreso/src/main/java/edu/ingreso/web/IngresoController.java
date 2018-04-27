@@ -22,12 +22,14 @@ public class IngresoController {
 	@Autowired
 	private IngresoRepository ingresoRepository;
 	
+	//Listar
 	@GetMapping("/ingreso/lista")
 		public String list(Map<String, Object> model) {
 			List<Ingreso> ingreso =ingresoRepository.findAll();
 			model.put("ingreso", ingreso);
 			return "listIngreso";
 	}
+	
 	
 	@GetMapping("/ingreso/new")
 	public String initCreationForm(Model model)
