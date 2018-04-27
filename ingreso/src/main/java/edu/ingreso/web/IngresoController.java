@@ -45,6 +45,18 @@ public class IngresoController {
 		if(ingreso.getIngresoBruto() - (UIT*7) >= 0) {
 			ingreso.setRentaNeta(ingreso.getIngresoBruto() - (UIT*7));
 			ingreso.setImpuesto(ingreso.getRentaNeta()*0.08);
+			if(ingreso.getRentaNeta()>=20250) {
+				ingreso.setImpuesto(Math.ceil(((UIT*5)*0.08) + (ingreso.getRentaNeta()-(UIT*5))*0.14));
+			}
+			if(ingreso.getRentaNeta() >= 81000) {
+				ingreso.setImpuesto(UIT*5*0.08 + (UIT*20 - UIT*5)*0.14 + (ingreso.getRentaNeta() - UIT*20)*0.17);
+			}
+			if(ingreso.getRentaNeta() >= 141750) {
+				ingreso.setImpuesto(UIT*5*0.08 + (UIT*20 - UIT*5)*0.14 + (UIT*35 - UIT*20) * 0.17 + (ingreso.getRentaNeta() - UIT*35)*0.2);
+			}
+			if(ingreso.getRentaNeta() >= 141750) {
+				ingreso.setImpuesto(UIT*5*0.08 + (UIT*20 - UIT*5)*0.14 + (UIT*35 - UIT*20)*0.17 + (UIT*45-UIT*35)*0.2+ (ingreso.getRentaNeta() - UIT*45)*0.3);
+			}
 		}else
 		{
 			ingreso.setRentaNeta(0);
