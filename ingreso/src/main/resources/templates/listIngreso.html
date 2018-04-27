@@ -13,6 +13,7 @@
   	<td>Ingreso Bruto</td>
   	<td>Renta Neta</td>
   	<td>Impuesto</td>
+  	<td>Renta Mensual</td>
   </tr>
   <tr th:each="ingreso : ${ingreso}">
   	<td th:text="${ingreso.id}"></td>
@@ -20,6 +21,7 @@
   	<td th:text="${ingreso.ingresoBruto}"></td>
   	<td th:text="${ingreso.rentaNeta}"></td>
   	<td th:text="${ingreso.impuesto}"></td>
+  	<td th:text="${ingreso.rentaMensual}"></td>
   </tr>
 
 </table>

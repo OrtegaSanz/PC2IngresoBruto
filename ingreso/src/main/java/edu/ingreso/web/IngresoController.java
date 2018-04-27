@@ -49,14 +49,15 @@ public class IngresoController {
 				ingreso.setImpuesto(Math.ceil(((UIT*5)*0.08) + (ingreso.getRentaNeta()-(UIT*5))*0.14));
 			}
 			if(ingreso.getRentaNeta() >= 81000) {
-				ingreso.setImpuesto(UIT*5*0.08 + (UIT*20 - UIT*5)*0.14 + (ingreso.getRentaNeta() - UIT*20)*0.17);
+				ingreso.setImpuesto(Math.ceil(UIT*5*0.08 + (UIT*20 - UIT*5)*0.14 + (ingreso.getRentaNeta() - UIT*20)*0.17));
 			}
 			if(ingreso.getRentaNeta() >= 141750) {
-				ingreso.setImpuesto(UIT*5*0.08 + (UIT*20 - UIT*5)*0.14 + (UIT*35 - UIT*20) * 0.17 + (ingreso.getRentaNeta() - UIT*35)*0.2);
+				ingreso.setImpuesto(Math.ceil(UIT*5*0.08 + (UIT*20 - UIT*5)*0.14 + (UIT*35 - UIT*20) * 0.17 + (ingreso.getRentaNeta() - UIT*35)*0.2));
 			}
 			if(ingreso.getRentaNeta() >= 141750) {
-				ingreso.setImpuesto(UIT*5*0.08 + (UIT*20 - UIT*5)*0.14 + (UIT*35 - UIT*20)*0.17 + (UIT*45-UIT*35)*0.2+ (ingreso.getRentaNeta() - UIT*45)*0.3);
+				ingreso.setImpuesto(Math.ceil(UIT*5*0.08 + (UIT*20 - UIT*5)*0.14 + (UIT*35 - UIT*20)*0.17 + (UIT*45-UIT*35)*0.2+ (ingreso.getRentaNeta() - UIT*45)*0.3));
 			}
+			ingreso.setRentaMensual(Math.ceil(ingreso.getImpuesto()/12));
 		}else
 		{
 			ingreso.setRentaNeta(0);
