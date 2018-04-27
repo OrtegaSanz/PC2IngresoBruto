@@ -12,7 +12,7 @@ import javax.validation.constraints.Size;
 public class Ingreso implements Serializable{
 	@Id
 	@GeneratedValue
-	private Integer Id;
+	private Integer id;
 	@NotNull
 	@Size(min=1,max=60,message="Debe poner el nombre de su Empresa.")
 	private String nomEmpresa;
@@ -23,10 +23,10 @@ public class Ingreso implements Serializable{
 	private double impuesto;
 	private double rentaMensual;
 	public Integer getId() {
-		return Id;
+		return id;
 	}
 	public void setId(Integer id) {
-		Id = id;
+		this.id = id;
 	}
 	public String getNomEmpresa() {
 		return nomEmpresa;

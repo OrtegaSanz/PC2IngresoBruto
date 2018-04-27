@@ -3,21 +3,25 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Lista de ingresos</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
 </head>
 <body>
-<t1>Lista de Empresas</t1>
+<div class="contianer">
+	<center><h1>Lista de Empresas</h1></center>
 <br>
-<table border=1>
-  <tr>
-  	<td>ID</td>
-  	<td>Empresa</td>
-  	<td>Ingreso Bruto</td>
-  	<td>Renta Neta</td>
-  	<td>Impuesto</td>
-  	<td>Renta Mensual</td>
-  </tr>
+<table border=1 class="table table-striped">
+  <thead>
+  	<tr>
+  		<td>Opcion</td>
+  		<td>Empresa</td>
+  		<td>Ingreso Bruto</td>
+  		<td>Renta Neta</td>
+  		<td>Impuesto</td>
+  		<td>Renta Mensual</td>
+  	</tr>
+  </thead>
   <tr th:each="ingreso : ${ingreso}">
-  	<td th:text="${ingreso.id}"></td>
+  	<td><a th:href="@{'/ingreso/__${ingreso.id}__/edit'}"class="btn btn-info" role="button">Edit</a> <a th:href="@{'/ingreso/__${ingreso.id}__/delete'}" class="btn btn-danger" role="button">Delete</a> </td>
   	<td th:text="${ingreso.nomEmpresa}"></td>
   	<td th:text="${ingreso.ingresoBruto}"></td>
   	<td th:text="${ingreso.rentaNeta}"></td>
@@ -26,7 +30,7 @@
   </tr>
 
 </table>
-
+</div>
 
 </body>
 </html>

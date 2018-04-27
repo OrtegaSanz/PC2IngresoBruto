@@ -7,7 +7,7 @@
 </head>
 <body>
 <div class="container">
- <form action="#" th:action="@{/ingreso/new}" th:object="${ingreso}" method="post">
+ <form action="#" th:action="@{/ingreso/__${ingreso.id}__/edit}" th:object="${ingreso}" method="post">
  	<table>
  	<tr>
  		<td>Nombre de la Empresa: </td>
@@ -20,7 +20,7 @@
  		<td th:if="${#fields.hasErrors('ingresoBruto')}" th:errors="*{ingresoBruto}">Valor que ingreso no es un numero o es negativo.</td>
  	</tr>
  	</table>
- 	<input type="submit" value="Agregar">
+ 	<input type="submit" value="Grabar">
 </form>
 </div>
 </body>
