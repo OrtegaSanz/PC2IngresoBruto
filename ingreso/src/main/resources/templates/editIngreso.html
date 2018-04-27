@@ -8,7 +8,9 @@
 <body>
 <div class="container">
 <h1><center>Editar</center></h1>
- <form action="#" th:action="@{/ingreso/__${ingreso.id}__/edit}" th:object="${ingreso}" method="post">
+<div class="row">
+<div class="col-lg-4">
+<form action="#" th:action="@{/ingreso/__${ingreso.id}__/edit}" th:object="${ingreso}" method="post">
  	<table>
  	<tr>
  		<td>Nombre de la Empresa: </td>
@@ -23,6 +25,44 @@
  	</table>
  	<input type="submit" value="Grabar">
 </form>
+</div>
+<div class="col-lg-8">
+	<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>Escala</th>
+			<th>Tasa</th>
+			<th>Maximo en S/.</th>
+		</tr>
+	</thead>
+		<tr>
+			<td>Hasta 5 UIT</td>
+			<td>8%</td>
+			<td>20250</td>
+		</tr>
+		<tr>
+			<td>Mas de 5 UIT hasta 20 UIT</td>
+			<td>14%</td>
+			<td>81000</td>
+		</tr>
+		<tr>
+			<td>Mas de 20 UIT hasta 35 UIT</td>
+			<td>17%</td>
+			<td>141750</td>
+		</tr>
+		<tr>
+			<td>Mas de 35 UIT hasta 45 UIT</td>
+			<td>20%</td>
+			<td>182250</td>
+		</tr>
+		<tr>
+			<td>Mas de 45 UIT</td>
+			<td>30%</td>
+			<td>>182250</td>
+		</tr>
+	</table>
+</div>
+</div>
 </div>
 </body>
 </html>
